@@ -9,9 +9,12 @@ wget https://storage.googleapis.com/golang/go1.4.2.src.tar.gz
 tar -xzvf go*.tar.gz
 cd go/src
 ./make.bash
-useradd zack
+mkdir /home/zack
+useradd zack -d /home/zack
+chown zack /home/zack
 su zack
 cd
+cp /etc/skel/.bashrc .
 mkdir -p ~/go/src
 echo 'export GOROOT=$HOME/go' >> ~/.bashrc
 echo 'export GOPATH=usr/local/go' >> ~/.bashrc
