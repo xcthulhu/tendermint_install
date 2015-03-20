@@ -4,20 +4,22 @@
 apt-get update -y
 apt-get upgrade -y
 apt-get install -y make screen gcc git mercurial libc6-dev pkg-config libgmp-dev
-cd /usr/local
+mkdir /home/zack
+cd /home/zack
 wget https://storage.googleapis.com/golang/go1.4.2.src.tar.gz
 tar -xzvf go*.tar.gz
 cd go/src
 ./make.bash
-mkdir /home/zack
 useradd zack -d /home/zack
 #su zack
 cd /home/zack
 cp /etc/skel/.bashrc .
 mkdir -p /home/zack/go/src
 echo 'export GOROOT=/home/zack/go' >> /home/zack/.bashrc
-echo 'export GOPATH=/usr/local/go' >> /home/zack/.bashrc
-echo 'export PATH=$PATH:/usr/local/go/bin' >> /home/zack/.bashrc
+echo 'export GOPATH=/home/zack/gocode' >> /home/zack/.bashrc
+echo 'export PATH=$PATH:$GOROOT/bin' >> /home/zack/.bashrc
+#echo 'export GOPATH=/usr/local/go' >> /home/zack/.bashrc
+#echo 'export PATH=$PATH:/usr/local/go/bin' >> /home/zack/.bashrc
 source /home/zack/.bashrc
 
 #This part installs tendermint
