@@ -18,11 +18,10 @@ mkdir -p /home/zack/go/src
 echo 'export GOROOT=/home/zack/go' >> /home/zack/.bashrc
 echo 'export GOPATH=/home/zack/gocode' >> /home/zack/.bashrc
 echo 'export PATH=$PATH:$GOROOT/bin' >> /home/zack/.bashrc
-#echo 'export GOPATH=/usr/local/go' >> /home/zack/.bashrc
-#echo 'export PATH=$PATH:/usr/local/go/bin' >> /home/zack/.bashrc
-source /home/zack/.bashrc
-
+reset
+#after it freezes, start here.
 #This part installs tendermint
+source /home/zack/.bashrc
 go get github.com/tendermint/tendermint
 
 cd $GOPATH/src/github.com/tendermint/tendermint
