@@ -28,5 +28,5 @@ cd $GOPATH/src/github.com/tendermint/tendermint
 git checkout new_evm
 make get_deps
 make
-#chown zack /home/zack
-#chown zack /home/zack/*
+chown -R zack /home/zack
+
