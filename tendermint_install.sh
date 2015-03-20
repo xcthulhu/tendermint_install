@@ -15,9 +15,9 @@ useradd zack -d /home/zack
 cd /home/zack
 cp /etc/skel/.bashrc .
 mkdir -p /home/zack/go/src
-echo 'export GOROOT=/home/zack/go' >> ~/.bashrc
-echo 'export GOPATH=/usr/local/go' >> ~/.bashrc
-echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
+echo 'export GOROOT=/home/zack/go' >> /home/zack/.bashrc
+echo 'export GOPATH=/usr/local/go' >> /home/zack/.bashrc
+echo 'export PATH=$PATH:/usr/local/go/bin' >> /home/zack/.bashrc
 source /home/zack/.bashrc
 
 #This part installs tendermint
