@@ -11,15 +11,14 @@ cd go/src
 ./make.bash
 mkdir /home/zack
 useradd zack -d /home/zack
-chown zack /home/zack
-su zack
-cd
+#su zack
+cd /home/zack
 cp /etc/skel/.bashrc .
-mkdir -p ~/go/src
-echo 'export GOROOT=$HOME/go' >> ~/.bashrc
+mkdir -p /home/zack/go/src
+echo 'export GOROOT=/home/zack/go' >> ~/.bashrc
 echo 'export GOPATH=/usr/local/go' >> ~/.bashrc
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
-source ~/.bashrc
+source /home/zack/.bashrc
 
 #This part installs tendermint
 go get github.com/tendermint/tendermint
@@ -28,6 +27,9 @@ cd $GOPATH/src/github.com/tendermint/tendermint
 git checkout new_evm
 make get_deps
 make
-./tendermint daemon
-
-
+chown zack /home/zack
+chown zack /home/zack/*
+chown zack /home/zack/*/*
+chown zack /home/zack/*/*/*
+chown zack /home/zack/*/*/*/*
+chown zack /home/zack/*/*/*/*/*
