@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#This part is for installing go language.
+#This part is for installing go language and setting up a user account
 apt-get update -y
 apt-get upgrade -y
 apt-get install -y make screen gcc git mercurial libc6-dev pkg-config libgmp-dev
@@ -17,7 +17,7 @@ cd
 cp /etc/skel/.bashrc .
 mkdir -p ~/go/src
 echo 'export GOROOT=$HOME/go' >> ~/.bashrc
-echo 'export GOPATH=usr/local/go' >> ~/.bashrc
+echo 'export GOPATH=/usr/local/go' >> ~/.bashrc
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
 source ~/.bashrc
 
@@ -26,6 +26,7 @@ go get github.com/tendermint/tendermint
 
 cd $GOPATH/src/github.com/tendermint/tendermint
 git checkout new_evm
+make get_deps
 make
 ./tendermint daemon
 
