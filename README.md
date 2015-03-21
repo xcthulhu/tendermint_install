@@ -1,6 +1,7 @@
-This is the program we run to install tendermint and dependencies onto an empty 14.04 Ubuntu Linux.
+You first need to install git:
 
-you first need to install git:
+> sudo apt-get install git
 
-sudo apt-get install git
-./tendermint_install.sh
+Then run the script:
+
+> ./tendermint.sh
